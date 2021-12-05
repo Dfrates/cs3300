@@ -5,7 +5,7 @@
         "lines": [
           1,
           1,
-          null,
+          1,
           null,
           1,
           4,
@@ -78,7 +78,7 @@
         "lines": [
           1,
           null,
-          null,
+          1,
           null,
           null
         ]
@@ -89,13 +89,6 @@
           null,
           1,
           null,
-          1,
-          null
-        ]
-      },
-      "/root/cs3300/app/models/application_record.rb": {
-        "lines": [
-          1,
           1,
           null
         ]
@@ -138,6 +131,27 @@
         "branches": {
         }
       },
+      "/root/cs3300/app/models/user.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/cs3300/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/root/cs3300/app/helpers/application_helper.rb": {
         "lines": [
           0,
@@ -155,6 +169,6 @@
         }
       }
     },
-    "timestamp": 1636248696
+    "timestamp": 1638678657
   }
 }
