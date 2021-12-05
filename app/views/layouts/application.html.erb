@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cs3300</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <div class="container">
+    <head>
+      <title>Cs3300</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-    <ul>
-      <% if user_signed_in? %>
-        <li><%= link_to "Hi, #{current_user.email}", edit_user_registration_path %></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-      <% end %>
-    </ul>
-    <%= yield %>
-  </body>
+    <body>
+      <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to "Hi, #{current_user.email}", edit_user_registration_path %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+      <%= yield %>
+    </body>
+  </div>
 </html>
