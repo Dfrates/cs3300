@@ -1,16 +1,19 @@
-<div class="container text-center">
-  <p id="notice"><%= notice %></p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= @project.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @project.description %>
-  </p>
-
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Back', projects_path %>
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="jumbotron">
+    <h1><%= @project.title %></h1>
+      <p>
+        <%= @project.description %>
+        ...
+      </p>
+    <span class="label label-primary"> Last update <%= @project.updated_at.strftime("%b %d, %Y") %></span>
+  </div>
+</div>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      
+    </div>
+    <%= link_to 'Back', root_path, class: 'label label-primary' %>
+  </div>
 </div>
