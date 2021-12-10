@@ -1,46 +1,29 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
   <head>
-    <title>Cs3300</title>
+    <title>Projects</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+</div>
 
+<br>
+
+<div class="container">
   <body>
-    <ul>
-      <% if user_signed_in? %>
-        <header>
-          <div class='container'>
-            <nav>
-              <ul>
-                <li><%= link_to "Home", Project %></li>
-                <li><%= link_to 'New Project', new_project_path %></li>
-                <li><%= link_to "Edit profile", edit_user_registration_path %></li>
-                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </nav
-          </div>
-        </header
-       
-      <% else %>
-        <header>
-          <div class='container'>
-            <nav>
-              <ul>
-                <li><%= link_to 'Sign In', new_user_session_path %></li>
-                <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-              </ul>
-            </nav
-          </div>
-        </header
-        
-      <% end %>
-    </ul>
+    <% if user_signed_in? %>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-info'  %>
+      <%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-primary'  %>
+      <%= link_to 'Home', projects_path, class: 'btn btn-primary'  %>
+      <%= link_to 'About', projects_path, class: 'btn btn-primary'  %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      
+     
+    <% else %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary' %>
+      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-primary'%>
+    <% end %>
     <%= yield %>
   </body>
-</html>
-
-
+</div>
